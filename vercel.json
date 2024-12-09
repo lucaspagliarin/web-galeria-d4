@@ -12,5 +12,6 @@
       "src": "/media/(.*)",
       "dest": "/mediafiles/$1"
     }
-  ]
+  ],
+  "outputDirectory": "staticfiles"
 }
