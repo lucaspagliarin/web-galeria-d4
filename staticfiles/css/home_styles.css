@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: "Inter", sans-serif;
+  }
+  
+  nav {
+    padding: 32px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    text-decoration: none;
+    color: #000000;
+  
+    display: flex;
+    align-items: center;
+  
+    gap: 16px;
+  }
+  
+  .logo > span {
+    font-size: 2.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.7rem;
+  }
+  
+  .nav_actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  
+  .nav_link {
+    width: 1.5rem;
+    height: 1.5rem;
+    flex-shrink: 0;
+  }
+  
+  .add_button {
+    display: flex;
+    padding: 1rem;
+    align-items: flex-start;
+    gap: 0.5rem;
+  
+    border-radius: 3.5rem;
+    background: var(--black, #1b1b1b);
+  
+    /* small */
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.16);
+  }
+  
+  .actions {
+    padding: 32px;
+  
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row-reverse;
+  
+    gap: 1.5rem;
+  }
+  
+  .tags {
+    font-family: "Patrick Hand";
+  
+    display: flex;
+    padding: 0.25rem 0.5rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  
+    border-radius: 0.375rem;
+    background: var(--Accent-Light-Blue-Green, #e6f9fe);
+  }
+  
+  .close_tag {
+    border: 0;
+    background-color: inherit;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .filter {
+    display: flex;
+    padding: 0.5rem;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+  
+    border-radius: 1rem;
+    background: var(--Accent-Light-Dandelion, #fff5d3);
+  }
+  
+  .grid {
+    width: 100%;
+  
+    display: flex;
+    flex-wrap: wrap;
+  
+    img {
+      width: 33.33333%;
+      max-height: 50vh;
+      object-fit: cover;
+    }
+  }
+  
+  dialog {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 90%;
+    height: 80%;
+    justify-self: center;
+    align-self: center;
+    border: none;
+    border-radius: 16px;
+    padding: 24px;
+  }
+  
+  label {
+    font-size: 14px;
+    align-self: flex-start;
+  }
+  
+  h2 {
+    font-size: 1.25rem;
+    color: #1b1b1b;
+    font-weight: 400;
+  }
+  
+  input {
+    font-size: 16px;
+    min-width: 300px;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid;
+    margin-bottom: 8px;
+  }
+  
+  input::placeholder {
+    font-size: 13px;
+    margin-left: 5px;
+  }
+  
+  button#botao-login,
+  button#botao-cadastro,
+  button#botao-adicionar {
+    border: none;
+    padding: 8px 16px;
+    width: 100px;
+    border-radius: 24px;
+    background-color: #e7c197;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+  }
+  
+  .login_section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login,
+  .cadastro {
+    display:flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px;
+    color: #000;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .wrapper {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+  }
+  
+  .login_image {
+    min-width: 60%;
+    height: 100vh;
+  }
+  
+  .form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  
+  .link_form {
+    font-size: 14px;
+  }
+  
+  .cadastro {
+    width: 45%;
+  }
+  
+  .sucesso {
+    padding: 2px;
+    border-radius: 10px;
+    width: 80%;
+    background-color: #5bfc86;
+  }
+  
+  .esconde {
+    display: none;
+  }
+  
+  #colecoes {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .colecao {
+    border-radius: 16px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    align-content: center;
+    justify-items: center;
+    padding: 16px 24px;
+  }
+  
+  .colecao:hover {
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: all 1s ease;
+  }
+  
+  #adiciona {
+    justify-items: center;
+  }
+  
+  .botoes-colecoes button {
+    border: none;
+    padding: 10px;
+    width: 150px;
+    border-radius: 30px;
+    background-color: #e7c197;
+    font-family: "Inter", sans-serif;
+    cursor: pointer;
+  }
+  
+  #id_pick_collection {
+    width: 300px;
+    height: 30px;
+    font-size: inherit;
+  }
+    
