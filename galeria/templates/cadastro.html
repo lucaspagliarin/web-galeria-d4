@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+15&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+15&family=Patrick+Hand&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static "css/home_styles.css" %}" />
+    <style>
+      .login_image {
+        background-image: url("{% static "assets/photo.jpeg" %} ");
+        background-size: cover;
+        background-position-x: center;
+        background-repeat: no-repeat;
+      }
+    </style>
+
+    <title>Galeria - cadastro</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="login_image"></div>
+      <section id="cadastro" class="login_section">
+        <a href="#" class="logo">
+          <svg
+            width="56"
+            height="56"
+            viewBox="0 0 56 56"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M44.4967 11.5033C42.3442 9.27476 39.7695 7.49718 36.9228 6.2743C34.076 5.05143 31.0142 4.40775 27.916 4.38082C24.8178 4.3539 21.7453 4.94428 18.8777 6.1175C16.0102 7.29072 13.4049 9.02329 11.2141 11.2141C9.02329 13.4049 7.29072 16.0102 6.1175 18.8777C4.94428 21.7453 4.3539 24.8178 4.38082 27.916C4.40775 31.0142 5.05143 34.076 6.2743 36.9228C7.49718 39.7695 9.27476 42.3442 11.5033 44.4967C13.6558 46.7252 16.2305 48.5028 19.0772 49.7257C21.924 50.9486 24.9858 51.5923 28.084 51.6192C31.1822 51.6461 34.2547 51.0557 37.1223 49.8825C39.9898 48.7093 42.5951 46.9767 44.7859 44.7859C46.9767 42.5951 48.7093 39.9898 49.8825 37.1223C51.0557 34.2547 51.6461 31.1822 51.6192 28.084C51.5923 24.9858 50.9486 21.924 49.7257 19.0772C48.5028 16.2305 46.7252 13.6558 44.4967 11.5033V11.5033ZM42.5367 16.3333H29.7733L35.2567 10.85C38.0924 12.0598 40.591 13.9418 42.5367 16.3333V16.3333ZM21 10.7333C23.8633 9.58731 26.9624 9.15488 30.03 9.47334L21 18.5033V10.7333ZM16.3333 13.4633V26.2267L12.11 22.0033L10.85 20.7433C12.0598 17.9076 13.9418 15.409 16.3333 13.4633V13.4633ZM10.7333 35C9.58457 32.1374 9.15204 29.0377 9.47334 25.97L18.5033 35H10.7333ZM13.4633 39.6667H26.2267L20.7433 45.15C17.9076 43.9402 15.409 42.0582 13.4633 39.6667V39.6667ZM35 45.2667C32.1372 46.4145 29.0377 46.847 25.97 46.5267L35 37.4967V45.2667ZM35 30.8933L30.8933 35H25.0833L21 30.8933V25.1067L25.1067 21H30.8933L35 25.1067V30.8933ZM39.6667 42.56V29.7733L45.15 35.2567C43.9402 38.0924 42.0582 40.591 39.6667 42.5367V42.56ZM37.4967 21H45.2667C46.4145 23.8628 46.847 26.9623 46.5267 30.03L37.4967 21Z"
+              fill="#1B1B1B"
+            />
+          </svg>
+
+          <span>GALERIA</span>
+        </a>
+        <div class="cadastro">
+          <div class="row" style="justify-content: center">
+            <h2>Cadastre-se</h2>
+          </div>
+          {% if retorno.sucesso %}
+          <div
+            class="successo"
+            style="
+              padding: 15px;
+              border-radius: 10px;
+              width: 90%;
+              background-color: #5bfc86;
+              text-align: center;
+            "
+          >
+            Cadastro realizado com sucesso. Para fazer login clique
+            <a href="/login/">aqui.</a>
+          </div>
+          {% endif %} {% if retorno.erro %}
+          <div
+            class="erro"
+            style="
+              padding: 15px;
+              border-radius: 10px;
+              width: 90%;
+              background-color: red;
+              text-align: center;
+            "
+          >
+            {{ retorno.mensagem }}
+          </div>
+          {% endif %} {% if cadastrar or retorno.cadastrar %}
+          <form action="" method="POST" class="form">
+            {% csrf_token %}
+            <label for="first_name"></label>
+            {{ form.first_name }}
+            <label for="last_name"></label>
+            {{ form.last_name }}
+            <label for="email"></label>
+            {{ form.email }}
+            <label for="username"></label>
+            {{ form.username }}
+            <label for="password"></label>
+            {{ form.password }}
+
+            <button id="botao-cadastro" type="submit">Cadastrar</button>
+          </form>
+          {% endif %}
+        </div>
+        <span class="link_form">
+          Já possui conta? <a href="/login/">Faça login aqui</a>
+        </span>
+      </section>
+    </div>
+  </body>
+</html>
